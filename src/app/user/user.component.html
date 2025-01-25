@@ -1,9 +1,9 @@
 <div>
-    <button>
+    <button (click)="onUserClick()">
         <img 
-            [src]="'assets/users/' + user.avatar" 
-            [alt]="user.name"
+            [src]="imageUrl" 
+            [alt]="username"
         />
-        <span>{{ user.name }}</span>
+        <span>{{ username }}</span>
     </button>
 </div>
