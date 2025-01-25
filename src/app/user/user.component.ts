@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 
 const randomUser = Math.floor(Math.random()*DUMMY_USERS.length);
@@ -12,18 +12,12 @@ const randomUser = Math.floor(Math.random()*DUMMY_USERS.length);
 export class UserComponent {
 
   
-  user = DUMMY_USERS[randomUser];
-  
-  get imageUrl() {
-    return `assets/users/${this.user.avatar}`;
-  }
-
-  get username() {
-    return this.user.name;
-  }
+  user = signal(DUMMY_USERS[randomUser]);
+  imageUrl = computed(() => `assets/users/${this.user().avatar}`);
+  username = computed(() => this.user().name);
 
   onUserClick() {
     const randomUser = Math.floor(Math.random()*DUMMY_USERS.length);
-    this.user = DUMMY_USERS[randomUser];
+    this.user.set(DUMMY_USERS[randomUser]);
   }
 }
