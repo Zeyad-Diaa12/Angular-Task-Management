@@ -11,8 +11,8 @@ import { NewTask } from './new-task/new-task.model';
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
-  @Input({required : true}) userId?: string;
-  @Input({ required : true}) name?: string;
+  @Input({ required: true }) userId?: string;
+  @Input({ required: true }) name?: string;
   isAddingTask = false;
 
   tasks = [
@@ -41,7 +41,7 @@ export class TasksComponent {
     },
   ]
 
-  get selectedUserTasks(){
+  get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId);
   }
 

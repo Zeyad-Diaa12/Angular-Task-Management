@@ -14,7 +14,7 @@ export class NewTaskComponent {
   enteredTitle = '';
   enteredSummary = '';
   enteredDate = '';
-  
+
   closeWindow() {
     this.close.emit();
   }

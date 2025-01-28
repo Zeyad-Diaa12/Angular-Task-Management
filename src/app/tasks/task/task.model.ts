@@ -1,7 +1,7 @@
-export interface Task  {
+export interface Task {
   id: string;
-  userId : string;
+  userId: string;
   title: string;
   summary: string;
-  dueDate : string;
+  dueDate: string;
 };
