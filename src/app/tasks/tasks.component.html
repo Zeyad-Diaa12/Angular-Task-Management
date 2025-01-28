@@ -6,9 +6,9 @@
     </menu>
   </header>
   <ul>
-    @for (user of users; track user.id) {
+    @for (task of selectedUserTasks; track task.id) {
         <li>
-            <app-task [name]="user.name" />
+            <app-task [task]="task" (completeTask)="onCompleteTask($event)"/>
         </li>
     }
   </ul>
